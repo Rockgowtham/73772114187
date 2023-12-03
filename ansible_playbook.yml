@@ -1,0 +1,18 @@
+---
+- name: Setup Configuration
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Create Registration_Number.txt
+      file:
+        path: /home/osboxes/73772114187.txt
+        state: touch
+    - name: Create Registration_Number
+      file:
+        path: /home/osboxes/73772114187
+        state: touch
+
+    - name: Install tree package
+      apt:
+        name: tree
+        state: present
